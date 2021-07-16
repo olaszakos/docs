@@ -1,2 +1,10 @@
 [build]
-command = "echo 'default context'"
+command = """
+rm -rf ./dfinity-docs-playbook
+git clone https://github.com/dfinity/dfinity-docs-playbook.git
+cp PREVIEW-antora-playbook.yml ./dfinity-docs-playbook
+cd dfinity-docs-playbook
+npm i @antora/cli @antora/site-generator-default asciidoctor-kroki
+$(npm bin)/antora --fetch PREVIEW-antora-playbook.yml
+"""
+publish = "dfinity-docs-playbook/build/site"

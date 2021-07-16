@@ -1,0 +1,43 @@
+site:
+  title: Internet Computer
+  url: https://sdk.dfinity.org
+  keys:
+
+content:
+  sources:
+    - url: ../
+    - url: https://github.com/dfinity/internet-identity.git
+      branches: "main"
+      start_path: docs
+    - url: https://github.com/dfinity/motoko-base.git
+      branches: "doc-pages"
+    - url: https://@github.com/dfinity/motoko.git
+      branches: "master"
+      start_path: doc
+    - url: git@github.com:dfinity/candid.git
+      branches: "master"
+      start_path: docs
+    - url: git@github.com:dfinity/cdk-rs.git
+      branches: "main"
+      start_path: "docs"
+
+ui:
+  bundle:
+    url: https://github.com/dfinity/antora-sdk/raw/master/build/ui-bundle.zip
+    snapshot: true
+
+asciidoc:
+  extensions:
+    - ./custom-lib/extensions.js
+    - asciidoctor-kroki
+  attributes:
+    proglang: Motoko
+    company-id: DFINITY
+    toc: ~
+    platform: Internet Computer blockchain
+    IC: Internet Computer
+    sdk-short-name: DFINITY Canister SDK
+    sdk-long-name: DFINITY Canister Software Development Kit (SDK)
+    cdk-short-name: DFINITY Rust CDK
+    page-moc-version: 0.5.14
+    page-moc-base-tag: dfx-0.7.0-beta.2
